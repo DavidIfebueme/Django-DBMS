@@ -11,3 +11,9 @@ class UserForm(forms.ModelForm):
             'fullname': 'Full Name',
             'emp_code': 'EMP. code'
         }
+
+    def __init__(self, *args, **kwargs):
+        super(UserForm, self).__init__(*args, **kwargs) 
+
+        self.fields['role'].empty_label = "Select"  
+        self.fields['emp_code'].required = False 

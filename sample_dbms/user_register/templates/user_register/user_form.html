@@ -16,6 +16,19 @@
             {{form.role|as_crispy_field}}
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fa-light fa-share-from-square"></i></i>Submit</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'user_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i>Back to List
+            </a>
+        </div>
+    </div>
+    
+
+    
 </form>
 
 
