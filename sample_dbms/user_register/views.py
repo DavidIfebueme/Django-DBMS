@@ -24,6 +24,10 @@ def user_form(request, id=0):
             form = UserForm(request.POST,instance=user)    
         if form.is_valid():
             form.save()
+            pass
+        else:
+            form = UserForm()
+
 
         return redirect('/user/list')
 

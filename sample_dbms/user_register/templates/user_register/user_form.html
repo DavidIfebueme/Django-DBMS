@@ -4,23 +4,37 @@
 
 {% block content %}
 
-<form action="" method="post" autocomplete="off">
+
+<form class="px-md-2" action="" method="post" autocomplete="off">
     {% csrf_token %}
-    {{form.fullname|as_crispy_field}}
-    {{form.phone_number|as_crispy_field}}
-    <div class="row">
-        <div class="col-md-4">
-            {{form.emp_code|as_crispy_field}}
-        </div>
-        <div class="col-md-8">
-            {{form.role|as_crispy_field}}
-        </div>
+
+    <div class="form-outline mb-4">
+        {{ form.fullname|as_crispy_field }}
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6 mb-4">
+            <div>                
+                {{ form.phone_number|as_crispy_field }}
+                <span class="error">{{ form.phone_number.errors }}</span>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div>
+                {{form.role|as_crispy_field}}
+            </div>            
+            
+        </div>               
+    </div>
+
+    <div class="mb-4">
+        {{form.emp_code|as_crispy_field}}
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
             <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fa-light fa-share-from-square"></i></i>Submit</button>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
             <a href="{% url 'user_list' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i>Back to List
             </a>
